@@ -14,11 +14,19 @@
         "@tailwindcss/typography": "^0.4.0",
         "alpinejs": "^3.0.6",
         "axios": "^0.21",
+        "cypress-multi-reporters": "^1.5.0",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
+        "ls": "^0.2.1",
+        "mocha": "^9.1.3",
+        "mochawesome": "^6.3.1",
+        "mochawesome-merge": "^4.2.0",
+        "mochawesome-report-generator": "^5.2.0",
         "postcss": "^8.1.14",
         "postcss-import": "^14.0.1",
-        "tailwindcss": "^2.2.2"
+        "rimraf": "^3.0.2",
+        "tailwindcss": "^2.2.2",
+        "yargs": "^17.2.1"
     },
     "dependencies": {
         "cypress": "^8.6.0",

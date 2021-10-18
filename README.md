@@ -1,11 +1,10 @@
-# Student management System
+# Student management System - Testing
 
 ## Team members:
 
 * Nguyễn Văn Quỳnh
 * Vũ Cao Tân
-* Vũ Văn Phong
-* Phạm Hoàng Giang
+* Lại Văn Huân
 
 ## Main features: 
 * 二要素認証、ログインセッション管理
@@ -21,3 +20,10 @@ http://uet-consultant-support.herokuapp.com/
 * コンサルタントのアカウント：　
 * emai: thutt@vnu.edu.vn 
 * password: password
+
+
+## Install & Configure
+### Run all test
+```
+node cypress_runner -b chrome
+```

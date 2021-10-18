@@ -11,5 +11,14 @@
         "password": "password"
       }
     }
-  }
+  },
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/report/mocha",
+    "overwrite": false,
+    "html": false,
+    "json": true,
+    "timestamp": "mmddyyyy_HHMMss"
+  },
+  "screenshotsFolder": "cypress/report/mocha/assets"
 }

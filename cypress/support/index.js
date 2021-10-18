@@ -15,6 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+const addContext = require('mochawesome/addContext')
 
 export const getConsultantAuth = () => {
   return {
@@ -29,6 +30,13 @@ export const getStudentAuth = () => {
     password: Cypress.env('roles').student.password,
   }
 }
+
+Cypress.on('test:after:run', (test, runnable) => {
+  if (test.state === 'failed') {
+    const screenshotFileName = `${runnable.parent.title} -- ${test.title} (failed).png`
+    addContext({ test }, `assets/${Cypress.spec.name}/${screenshotFileName}`)
+  }
+})
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
