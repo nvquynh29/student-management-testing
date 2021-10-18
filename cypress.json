@@ -1,0 +1,15 @@
+{
+  "baseUrl": "http://localhost:8000/",
+  "env": {
+    "roles": {
+      "consultant": {
+        "email": "thutt@vnu.edu.vn",
+        "password": "password"
+      },
+      "student": {
+        "email": "17020036@vnu.edu.vn",
+        "password": "password"
+      }
+    }
+  }
+}
