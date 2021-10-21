@@ -37,7 +37,7 @@
                   <div class="col-md-12 grid-margin">
                       <div class="row">
                           <div class="col-12 col-xl-8 ">
-                              <h3 class="font-weight-bold text-xl">Hệ thống quản lý sinh viên</h3>
+                              <h3 class="font-weight-bold text-xl screen-name">Hệ thống quản lý sinh viên</h3>
                           </div>
                       </div>
                   </div>
@@ -48,7 +48,7 @@
                   <div class="col-md-12 grid-margin stretch-card">
                       <div class="card">
                           <div class="card-body">
-                              <h3 class="card-title">Các sự kiện của trường đang diễn ra</h3>
+                              <h3 class="card-title slides-title">Các sự kiện của trường đang diễn ra</h3>
                               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                   <!-- Indicators -->
                                   <ol class="carousel-indicators">
@@ -103,7 +103,7 @@
                   @can('manage-tasks')
                       {{-- class --}}
                       <div class="col-md-12">
-                          <h3 class="font-weight-bold mb-4">Các lớp học đang quản lý</h3>
+                          <h3 class="font-weight-bold mb-4 class-list">Các lớp học đang quản lý</h3>
                       </div>
                       <div class="col-md-12 grid-margin transparent">
 
@@ -149,7 +149,7 @@
                                                   <div class="row">
                                                       <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
                                                           <div class="ml-xl-4 mt-3">
-                                                              <p class="card-title">Báo cáo tổng quan</p>
+                                                              <p class="card-title report-title">Báo cáo tổng quan</p>
                                                               <h3 class="text-primary">{{ $class->name }}</h1>
 
                                                                   <p class="mb-2 mb-xl-0">

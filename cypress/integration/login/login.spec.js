@@ -8,6 +8,15 @@ describe('Test login page', () => {
     cy.visit('/')
   })
 
+  it('Check screen elements visible', () => {
+    cy.get('label[for="email"]').should('be.visible')
+    cy.get('label[for="password"]').should('be.visible')
+    cy.get('input[name="email"]').should('be.visible')
+    cy.get('input[name="password"]').should('be.visible')
+    cy.get('input[name="remember"]').should('be.visible')
+    cy.get('button[type="submit"]').should('be.visible')
+  })
+
   it('Login with valid consultant account', () => {
     cy.get('input[name="email"]').type(getConsultantAuth().email)
     cy.get('input[name="password"]').type(getConsultantAuth().password)
