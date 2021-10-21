@@ -7,7 +7,7 @@
     </style>
 
     <div>
-        <p class="card-title text-center " style="margin-bottom: 40px">Danh sách sinh viên - {{ $class->name }}</p>
+        <p class="card-title text-center students-title" style="margin-bottom: 40px">Danh sách sinh viên - {{ $class->name }}</p>
         <div class='row'>
             <div class='col-md-1 d-flex justify-content-center align-item-center' name='label'
                 style='padding-right: 0px; height: 54px;'>

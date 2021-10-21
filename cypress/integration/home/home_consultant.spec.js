@@ -1,11 +1,6 @@
-import { getConsultantAuth } from '../../support'
-
 describe('Test home page - Consultant', () => {
   before(() => {
-    cy.visit('/')
-    cy.get('input[name="email"]').type(getConsultantAuth().email)
-    cy.get('input[name="password"]').type(getConsultantAuth().password)
-    cy.get('button[type="submit"]').click()
+    cy.loginAs('consultant')
   })
 
   it('Check screen name', () => {

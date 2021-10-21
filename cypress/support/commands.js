@@ -38,7 +38,6 @@ const getStudentAuth = () => {
 }
 
 Cypress.Commands.add('loginAs', role => {
-  const DELAY = 1000
   cy.visit('/')
   if (role === 'consultant') {
     cy.get('input[name="email"]').type(getConsultantAuth().email)
@@ -49,6 +48,4 @@ Cypress.Commands.add('loginAs', role => {
     cy.get('input[name="password"]').type(getStudentAuth().password)
   }
   cy.get('button[type="submit"]').click()
-  // cy.wait(DELAY)
-  cy.url().then(url => cy.wrap(url).should('contains', 'dashboard'))
 })
