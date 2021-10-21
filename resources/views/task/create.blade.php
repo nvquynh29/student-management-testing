@@ -1,5 +1,11 @@
 @extends('layouts.admin')
 @section('main')
+<style>
+    .select2-container:first-child{
+        display:none !important;
+        
+    }
+</style>
     <div class="main-panel">
         <div class="content-wrapper">
             <div class="row flex justify-content-center">
