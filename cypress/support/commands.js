@@ -23,3 +23,32 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+const getConsultantAuth = () => {
+  return {
+    email: Cypress.env('roles').consultant.email,
+    password: Cypress.env('roles').consultant.password,
+  }
+}
+
+const getStudentAuth = () => {
+  return {
+    email: Cypress.env('roles').student.email,
+    password: Cypress.env('roles').student.password,
+  }
+}
+
+Cypress.Commands.add('loginAs', role => {
+  const DELAY = 1000
+  cy.visit('/')
+  if (role === 'consultant') {
+    cy.get('input[name="email"]').type(getConsultantAuth().email)
+    cy.get('input[name="password"]').type(getConsultantAuth().password)
+  }
+  if (role === 'student') {
+    cy.get('input[name="email"]').type(getStudentAuth().email)
+    cy.get('input[name="password"]').type(getStudentAuth().password)
+  }
+  cy.get('button[type="submit"]').click()
+  // cy.wait(DELAY)
+  cy.url().then(url => cy.wrap(url).should('contains', 'dashboard'))
+})

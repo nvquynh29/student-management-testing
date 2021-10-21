@@ -17,19 +17,6 @@
 import './commands'
 const addContext = require('mochawesome/addContext')
 
-export const getConsultantAuth = () => {
-  return {
-    email: Cypress.env('roles').consultant.email,
-    password: Cypress.env('roles').consultant.password,
-  }
-}
-
-export const getStudentAuth = () => {
-  return {
-    email: Cypress.env('roles').student.email,
-    password: Cypress.env('roles').student.password,
-  }
-}
 
 Cypress.on('test:after:run', (test, runnable) => {
   if (test.state === 'failed') {
