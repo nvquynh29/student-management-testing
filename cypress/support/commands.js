@@ -38,14 +38,22 @@ const getStudentAuth = () => {
 }
 
 Cypress.Commands.add('loginAs', role => {
-  cy.visit('/')
+  let email = ''
+  let password = ''
+
   if (role === 'consultant') {
-    cy.get('input[name="email"]').type(getConsultantAuth().email)
-    cy.get('input[name="password"]').type(getConsultantAuth().password)
+    email = getConsultantAuth().email
+    password = getConsultantAuth().password
   }
   if (role === 'student') {
-    cy.get('input[name="email"]').type(getStudentAuth().email)
-    cy.get('input[name="password"]').type(getStudentAuth().password)
+    email = getStudentAuth().email
+    password = getStudentAuth().password
   }
-  cy.get('button[type="submit"]').click()
+  cy.session([email, password], () => {
+    cy.visit('/login')
+    cy.get('input[name="email"]').type(email)
+    cy.get('input[name="password"]').type(password)
+    cy.get('button[type="submit"]').click()
+    cy.url().should('contain', '/dashboard')
+  })
 })
