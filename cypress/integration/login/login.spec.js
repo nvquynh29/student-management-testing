@@ -16,12 +16,10 @@ describe('Test login page', () => {
 
   it('Login with valid consultant account', () => {
     cy.loginAs('consultant')
-    cy.url().then(url => cy.wrap(url).should('contains', 'dashboard'))
   })
 
   it('Login with valid student account', () => {
     cy.loginAs('student')
-    cy.url().then(url => cy.wrap(url).should('contains', 'dashboard'))
   })
 
   it('Handle empty input', () => {

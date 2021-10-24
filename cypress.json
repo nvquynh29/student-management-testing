@@ -20,5 +20,6 @@
     "json": true,
     "timestamp": "mmddyyyy_HHMMss"
   },
-  "screenshotsFolder": "cypress/report/mocha/assets"
+  "screenshotsFolder": "cypress/report/mocha/assets",
+  "experimentalSessionSupport": true
 }
