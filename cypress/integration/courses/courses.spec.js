@@ -27,7 +27,7 @@ describe('Test courses page', () => {
       .invoke('attr', 'placeholder')
       .should('equal', 'Tìm kiếm tên, mã môn, năm học')
   })
-  it('Test table filter', () => {
+  it('Test table filters', () => {
     cy.get('div[name="select2"] select')
       .select('0')
       .then(() => {
