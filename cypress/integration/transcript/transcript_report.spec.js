@@ -39,12 +39,7 @@ describe('Test view grade page', () => {
           .then(value => {
             cy.get('@sortBy').select(value)
             cy.wait(1000)
-          })
-        cy.get('@options')
-          .eq(rand)
-          .invoke('attr', 'data-test')
-          .then(slug => {
-            cy.get(`tr td[class="${slug}"]`)
+            cy.get(`tr td.${value}`)
               .as('filteredList')
               .its('length')
               .then(len => {
@@ -74,6 +69,12 @@ describe('Test view grade page', () => {
                 }
               })
           })
+        // cy.get('@options')
+        //   .eq(rand)
+        //   .invoke('attr', 'data-test')
+        //   .then(slug => {
+
+        //   })
       })
   })
   it('Test table filter - class filter', () => {
