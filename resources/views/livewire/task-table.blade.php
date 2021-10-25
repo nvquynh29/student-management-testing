@@ -6,7 +6,7 @@
 
     </style>
     <div>
-        <p class="card-title">Công việc</p>
+        <p class="task-title card-title">Công việc</p>
         <div class='row'>
             <div class='col-md-1 d-flex justify-content-center align-item-center' name='label'
                 style='padding-right: 0px; height: 54px;'>
@@ -57,10 +57,10 @@
                 <select wire:model="perPage"
                     class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-state">
-                    <option>10</option>
-                    <option>25</option>
-                    <option>50</option>
-                    <option>100</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
                 </select>
                 {{-- <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -72,7 +72,7 @@
             <div class='col-md-3' name='add'>
                 @can('manage-tasks')
                     <div class='d-flex justify-content-center align-item-center' style='padding-right: 0px; height: 54px;'>
-                        <a href="/task/create" class="text-reset text-decoration-none d-flex " style='margin: 0;
+                        <a href="/task/create" class="add-task text-reset text-decoration-none d-flex " style='margin: 0;
                                 position: absolute;
                                 top: 50%;
                                 -ms-transform: translateY(-50%);
@@ -90,7 +90,7 @@
 
             <div class="col-md-3" name='search' style='padding: 0px 30px 0px 0px;'>
                 <input wire:model.debounce.300ms="search" type="text"
-                    class="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    class="task-search appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     placeholder="ID, tên công việc, người liên quan" style="overflow: hidden;text-overflow: ellipsis">
                 <span style="cursor:pointer ;position: absolute;font-size: 23px; top: 11px;right: 29px;"
                     class="input-group-text border-0 p-0 bg-transparent fw-bolder fs-2" id="search-addon">
@@ -124,16 +124,10 @@
                 @foreach ($tasks as $task)
 
                     <tr data-toggle="collapse" data-target="#demo{{ $task->id }}" class="accordion-toggle">
-                        <td class="align-middle">
-                            {{ $task->id }}
-                        </td>
-                        <td class="align-middle">
-                            {{ $task->name }}
-                        </td>
-                        <td class="align-middle">
-                            {{ $task->deadline }}
-                        </td>
-                        <td class="align-middle">
+                        <td class="id align-middle">{{ $task->id }}</td>
+                        <td class="name align-middle">{{ $task->name }}</td>
+                        <td class="align-middle">{{ $task->deadline }}</td>
+                        <td class="progress align-middle">
                             @php
                                 $progress_type;
                                 if ($task->progress < 33) {
@@ -143,7 +137,6 @@
                                 } else {
                                     $progress_type = 'bg-success';
                                 }
-                                
                             @endphp
                             <div class="progress">
                                 <div class="progress-bar align-middle {{ $progress_type }}" role="progressbar"
@@ -175,7 +168,7 @@
                                 $status = 'Đã xong';
                             }
                         @endphp
-                        <td class="align-middle"><label class="badge p-2 mt-0 align-middle {{ $status_type }}"
+                        <td class="status align-middle"><label class="badge p-2 mt-0 align-middle {{ $status_type }}"
                                 style="min-width: 70px">{{ $status }}</label>
                         </td>
                         <td>
@@ -190,7 +183,7 @@
 
 
                                 <a href="/task/{{ $task->id }}/edit"
-                                    class="mr-3 text-reset flex align-self-center align-middle text-decoration-none">
+                                    class="edit-task mr-3 text-reset flex align-self-center align-middle text-decoration-none">
                                     <ion-icon name="create-outline" role="img" class="md hydrated"
                                         aria-label="create outline"></ion-icon>
                                 </a>
