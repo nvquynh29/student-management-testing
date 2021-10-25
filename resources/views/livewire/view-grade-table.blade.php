@@ -3,11 +3,13 @@
         .select {
             padding: 0px 5px 0px 0px;
         }
+
     </style>
     <div>
-        <p class="card-title">Kết quả học tập</p>
+        <p class="card-title grade-title">Kết quả học tập</p>
         <div class="row">
-            <div class='col-md-1 d-flex justify-content-center align-item-center' name='label' style='padding-right: 0px; height: 54px;'>
+            <div class='col-md-1 d-flex justify-content-center align-item-center' name='label'
+                style='padding-right: 0px; height: 54px;'>
                 <div class='' style='margin: 0;
                     position: absolute;
                     top: 50%;
@@ -21,11 +23,11 @@
                 <select wire:model="orderBy"
                     class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-state">
-                    <option value="msv">MSV</option>
-                    <option value="name">Tên</option>
-                    <option value="AccumulatedCredits">Số TC</option>
-                    <option value="GPA">GPA</option>
-                    <option value="SoTinNo">Số TC đang nợ</option>
+                    <option data-test="msv" value="msv">MSV</option>
+                    <option data-test="name" value="name">Tên</option>
+                    <option data-test="AccumulatedCredits" value="AccumulatedCredits">Số TC</option>
+                    <option data-test="GPA" value="gpa">GPA</option>
+                    <option data-test="SoTinNo" value="SoTinNo">Số TC đang nợ</option>
                 </select>
                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -50,10 +52,10 @@
                 <select wire:model="perPage"
                     class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-state">
-                    <option>10</option>
-                    <option>25</option>
-                    <option>50</option>
-                    <option>100</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
                 </select>
                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -80,7 +82,7 @@
 
             <div class="col-md-3" name='search' style='padding: 0px 30px 0px 0px;'>
                 <input wire:model.debounce.300ms="search" type="text"
-                    class="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    class="grade-search appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     placeholder="Tìm kiếm tên hoặc mã sinh viên" style="overflow: hidden;text-overflow: ellipsis">
                 <span style="cursor:pointer ;position: absolute;font-size: 23px; top: 11px;right: 29px;"
                     class="input-group-text border-0 p-0 bg-transparent fw-bolder fs-2" id="search-addon">
@@ -122,13 +124,13 @@
                 @foreach ($studentss as $student)
 
                     <tr onclick="location.href='/marks/{{ $student->id }}'" style="cursor: pointer">
-                        <td>{{ $student->msv }}</td>
-                        <td>{{ $student->name }}</td>
-                        <td>{{ $student->class->name }}</td>
-                        <td>{{ $student->AccumulatedCredits }}</td>
-                        <td>{{ number_format((float) $student->GPA, 2, '.', '') }}</td>
-                        <td>{{ $student->SoTinNo }}</td>
-                        <td>{{ $student->so_lan_nhac_nho ?? 0 }}</td>
+                        <td class="msv">{{ $student->msv }}</td>
+                        <td class="name">{{ $student->name }}</td>
+                        <td class="class-name">{{ $student->class->name }}</td>
+                        <td class="AccumulatedCredits">{{ $student->AccumulatedCredits }}</td>
+                        <td class="GPA">{{ number_format((float) $student->GPA, 2, '.', '') }}</td>
+                        <td class="SoTinNo">{{ $student->SoTinNo }}</td>
+                        <td class="no-reminded">{{ $student->so_lan_nhac_nho ?? 0 }}</td>
                     </tr>
                 @endforeach
             </tbody>
