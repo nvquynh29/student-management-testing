@@ -33,11 +33,11 @@
     </x-slot>
 
     <x-slot name="actions">
-        <x-jet-action-message class="mr-3" on="saved">
+        <x-jet-action-message data-cy="save=psw" class="mr-3" on="saved">
             {{ __('Đã lưu.') }}
         </x-jet-action-message>
 
-        <x-jet-button>
+        <x-jet-button data-cy="save-password">
             {{ __('Lưu') }}
         </x-jet-button>
     </x-slot>

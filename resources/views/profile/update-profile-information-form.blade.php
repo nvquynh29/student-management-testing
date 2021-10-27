@@ -24,7 +24,7 @@
                 <x-jet-label for="photo" value="{{ __('Ảnh đại diện') }}" />
 
                 <!-- Current Profile Photo -->
-                <div class="mt-2" x-show="! photoPreview">
+                <div class="mt-2" data-cy="avatar" x-show="! photoPreview">
                     <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ $this->user->name }}"
                         class="rounded-full h-20 w-20 object-cover">
 
@@ -37,7 +37,7 @@
                     </span>
                 </div>
 
-                <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
+                <x-jet-secondary-button class="mt-2 mr-2" data-cy="change-avt-btn" type="button" x-on:click.prevent="$refs.photo.click()">
                     {{ __('Chọn ảnh đại diện mới') }}
                 </x-jet-secondary-button>
 
@@ -67,11 +67,11 @@
     </x-slot>
 
     <x-slot name="actions">
-        <x-jet-action-message class="mr-3" on="saved">
+        <x-jet-action-message class="mr-3" data-cy="saved-userinfo" on="saved">
             {{ __('Đã lưu') }}
         </x-jet-action-message>
 
-        <x-jet-button wire:loading.attr="disabled" wire:target="photo">
+        <x-jet-button wire:loading.attr="disabled" data-cy="save-btn" wire:target="photo">
             {{ __('Lưu') }}
         </x-jet-button>
     </x-slot>
