@@ -6,7 +6,7 @@
         <div class="content-wrapper">
 
             {{-- Chart --}}
-            <div class="row">
+            <div class="row" data-cy="chart-wrapper">
                 <div class="col-md-12 ">
                     <div class="card">
                         <div class="card-body">
@@ -49,7 +49,7 @@
             </div>
 
             {{-- bang classes thieu hoc phi --}}
-            <div class="row" style="margin-top: 40px">
+            <div class="row" data-cy="lack-tuition-table-classes" style="margin-top: 40px">
                 <div class="col-md-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
@@ -115,7 +115,7 @@
 
 
             {{-- bang sinh vien thieu hoc phi --}}
-            <div class="row">
+            <div class="row" data-cy="lack-tuition-table-students">
                 <div class="col-md-8">
                     <div class="card overflow-auto " style="max-height: 479px">
                         <div class="card-body">
@@ -190,7 +190,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 rounded-3 stretch-card grid-margin ">
+                <div class="col-md-4 rounded-3 stretch-card grid-margin" data-cy="poor-students">
                     <div class="card overflow-auto " style="max-height: 479px">
                         <div class="card-body">
                             <p class="card-title">Một số sinh viên thuộc diện khó khăn</p>
@@ -230,7 +230,7 @@
                 </div>
             </div>
             <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12" data-cy="force-quite">
         <div class="card " style="max-height: 479px">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-middle ">

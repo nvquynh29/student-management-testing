@@ -21,5 +21,8 @@
     "timestamp": "mmddyyyy_HHMMss"
   },
   "screenshotsFolder": "cypress/report/mocha/assets",
-  "experimentalSessionSupport": true
+  "experimentalSessionSupport": true,
+
+  "requestTimeout": 60000,
+  "responseTimeout": 60000
 }
