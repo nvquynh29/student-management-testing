@@ -1,6 +1,7 @@
 describe('Test home page - Student', () => {
-  before(() => {
+  beforeEach(() => {
     cy.loginAs('student')
+    cy.visit('/dashboard')
   })
 
   it('Check screen name', () => {
@@ -23,7 +24,7 @@ describe('Test home page - Student', () => {
       .should('be.visible')
       .invoke('attr', 'data-slide-to')
       .then($index => {
-        cy.wait(4500)
+        cy.wait(5000)
         cy.get('.carousel-indicators li.active')
           .invoke('attr', 'data-slide-to')
           .then($curr => expect($curr).to.not.equal($index))
@@ -45,7 +46,7 @@ describe('Test home page - Student', () => {
       })
   })
   it('Check next slide button', () => {
-    cy.wait(4600)
+    cy.wait(5000)
     cy.get('.carousel-indicators li.active')
       .should('be.visible')
       .invoke('attr', 'data-slide-to')

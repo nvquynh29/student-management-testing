@@ -1,6 +1,7 @@
 describe('Test home page - Consultant', () => {
-  before(() => {
+  beforeEach(() => {
     cy.loginAs('consultant')
+    cy.visit('/dashboard')
   })
 
   it('Check screen name', () => {
