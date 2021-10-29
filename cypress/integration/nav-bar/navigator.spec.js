@@ -2,6 +2,7 @@
 
 beforeEach(() => {
   cy.loginAs('consultant')
+  cy.visit('/dashboard')
 })
 
 describe('Navigator bar', () => {
@@ -125,7 +126,7 @@ describe('Avatar', () => {
 
 describe('Side bar', () => {
   it('Show sidebar', () => {
-    cy.get('.active > .nav-link')
+    cy.get('.navbar-nav')
       .should('be.visible')
       .should('have.css', 'background-color', 'rgb(75, 73, 172)')
   })
@@ -146,7 +147,7 @@ describe('Side bar', () => {
         cy.get('.sidebar-icon-only').should('be.visible')
       })
       .then(() => {
-        cy.get('.nav-item').should('be.visible')
+        cy.get('.navbar-nav').should('be.visible')
       })
   })
 })
