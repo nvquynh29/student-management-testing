@@ -1,0 +1,244 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 7,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-10-30T15:13:53.209Z",
+    "end": "2021-10-30T15:14:32.982Z",
+    "duration": 39773,
+    "testsRegistered": 8,
+    "passPercent": 87.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e98cce57-01fe-4cf9-a8ef-21109fc40115",
+      "title": "",
+      "fullFile": "cypress/integration/home/home_consultant.spec.js",
+      "file": "cypress/integration/home/home_consultant.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5247ba54-165a-4dce-a6e2-5499ad40ec1b",
+          "title": "Test home page - Consultant",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check screen name",
+              "fullTitle": "Test home page - Consultant Check screen name",
+              "timedOut": null,
+              "duration": 11273,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.screen-name').should('be.visible').then($name => expect($name).to.contain('Hệ thống quản lý sinh viên'));",
+              "err": {},
+              "uuid": "fe82886c-cb2d-4fc5-ae42-7c500cb1d116",
+              "parentUUID": "5247ba54-165a-4dce-a6e2-5499ad40ec1b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check slides title",
+              "fullTitle": "Test home page - Consultant Check slides title",
+              "timedOut": null,
+              "duration": 2467,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.slides-title').should('be.visible').then($title => expect($title).to.contain('Các sự kiện của trường đang diễn ra'));",
+              "err": {},
+              "uuid": "3773e615-97e7-4e96-96ed-33b0d7f3cb65",
+              "parentUUID": "5247ba54-165a-4dce-a6e2-5499ad40ec1b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check slide images visible",
+              "fullTitle": "Test home page - Consultant Check slide images visible",
+              "timedOut": null,
+              "duration": 1988,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.carousel-item img').should('be.visible');",
+              "err": {},
+              "uuid": "69d01c1b-ab8d-4efe-bdfb-5534cbdb3dda",
+              "parentUUID": "5247ba54-165a-4dce-a6e2-5499ad40ec1b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check slides auto play",
+              "fullTitle": "Test home page - Consultant Check slides auto play",
+              "timedOut": null,
+              "duration": 7522,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"assets/home/home_consultant.spec.js/Test home page - Consultant -- Check slides auto play (failed).png\"",
+              "code": "cy.get('.carousel-indicators li.active').should('be.visible').invoke('attr', 'data-slide-to').then($index => {\n  cy.wait(4500);\n  cy.get('.carousel-indicators li.active').invoke('attr', 'data-slide-to').then($curr => expect($curr).to.not.equal($index));\n});",
+              "err": {
+                "message": "AssertionError: expected '0' to not equal '0'",
+                "estack": "AssertionError: expected '0' to not equal '0'\n    at Context.eval (http://localhost:8000/__cypress/tests?p=cypress/integration/home/home_consultant.spec.js:116:115)",
+                "diff": ""
+              },
+              "uuid": "7a51dc50-d89c-4f70-9c5e-d8c16a8f886e",
+              "parentUUID": "5247ba54-165a-4dce-a6e2-5499ad40ec1b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check prev slide button",
+              "fullTitle": "Test home page - Consultant Check prev slide button",
+              "timedOut": null,
+              "duration": 3182,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.carousel-indicators li.active').should('be.visible').invoke('attr', 'data-slide-to').then($index => {\n  cy.get('a[href=\"#carouselExampleIndicators\"][class=\"carousel-control-prev\"]').should('be.visible').click();\n  cy.get('.carousel-indicators li.active').invoke('attr', 'data-slide-to').then($curr => expect($curr).to.not.equal($index));\n});",
+              "err": {},
+              "uuid": "9125a5a2-5b68-4130-8b13-a80fd410b55a",
+              "parentUUID": "5247ba54-165a-4dce-a6e2-5499ad40ec1b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check next slide button",
+              "fullTitle": "Test home page - Consultant Check next slide button",
+              "timedOut": null,
+              "duration": 7722,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(4600);\ncy.get('.carousel-indicators li.active').should('be.visible').invoke('attr', 'data-slide-to').then($index => {\n  cy.get('a[href=\"#carouselExampleIndicators\"][class=\"carousel-control-next\"]').should('be.visible').click();\n  cy.get('.carousel-indicators li.active').invoke('attr', 'data-slide-to').then($curr => expect($curr).to.not.equal($index));\n});",
+              "err": {},
+              "uuid": "af59f0ac-d9fe-4996-9abe-a7a6884f3eb5",
+              "parentUUID": "5247ba54-165a-4dce-a6e2-5499ad40ec1b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check class list title",
+              "fullTitle": "Test home page - Consultant Check class list title",
+              "timedOut": null,
+              "duration": 2346,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('h3.class-list').then($title => expect($title).to.contain('Các lớp học đang quản lý'));",
+              "err": {},
+              "uuid": "d8c5b8f8-b982-4ca5-89f7-662c20cfb9bb",
+              "parentUUID": "5247ba54-165a-4dce-a6e2-5499ad40ec1b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check report title",
+              "fullTitle": "Test home page - Consultant Check report title",
+              "timedOut": null,
+              "duration": 2651,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.report-title').eq(0).should('contain', 'Báo cáo tổng quan');",
+              "err": {},
+              "uuid": "12239daa-fe33-420c-b6fe-1d8af860fc99",
+              "parentUUID": "5247ba54-165a-4dce-a6e2-5499ad40ec1b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fe82886c-cb2d-4fc5-ae42-7c500cb1d116",
+            "3773e615-97e7-4e96-96ed-33b0d7f3cb65",
+            "69d01c1b-ab8d-4efe-bdfb-5534cbdb3dda",
+            "9125a5a2-5b68-4130-8b13-a80fd410b55a",
+            "af59f0ac-d9fe-4996-9abe-a7a6884f3eb5",
+            "d8c5b8f8-b982-4ca5-89f7-662c20cfb9bb",
+            "12239daa-fe33-420c-b6fe-1d8af860fc99"
+          ],
+          "failures": [
+            "7a51dc50-d89c-4f70-9c5e-d8c16a8f886e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 39151,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report/mocha",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "5.2.0"
+    }
+  }
+}
