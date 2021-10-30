@@ -1,0 +1,206 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 5,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-10-30T15:14:46.481Z",
+    "end": "2021-10-30T15:15:22.770Z",
+    "duration": 36289,
+    "testsRegistered": 6,
+    "passPercent": 83.33333333333334,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "331b86fb-fd74-46a4-9d47-c3d5df16d550",
+      "title": "",
+      "fullFile": "cypress/integration/home/home_student.spec.js",
+      "file": "cypress/integration/home/home_student.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "283a0d2f-5821-439c-aad6-de7866f5d334",
+          "title": "Test home page - Student",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check screen name",
+              "fullTitle": "Test home page - Student Check screen name",
+              "timedOut": null,
+              "duration": 12066,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.screen-name').should('be.visible').then($name => expect($name).to.contain('Hệ thống quản lý sinh viên'));",
+              "err": {},
+              "uuid": "66fbeb5f-9cb7-4d29-8880-b8e957486984",
+              "parentUUID": "283a0d2f-5821-439c-aad6-de7866f5d334",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check slides title",
+              "fullTitle": "Test home page - Student Check slides title",
+              "timedOut": null,
+              "duration": 1747,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.slides-title').should('be.visible').then($title => expect($title).to.contain('Các sự kiện của trường đang diễn ra'));",
+              "err": {},
+              "uuid": "469cd50a-86f3-4d0b-a2d2-1e84b81e9870",
+              "parentUUID": "283a0d2f-5821-439c-aad6-de7866f5d334",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check slide images visible",
+              "fullTitle": "Test home page - Student Check slide images visible",
+              "timedOut": null,
+              "duration": 1808,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.carousel-item img').should('be.visible');",
+              "err": {},
+              "uuid": "a7fb49b4-d054-4843-9be1-9b34dbc6a08c",
+              "parentUUID": "283a0d2f-5821-439c-aad6-de7866f5d334",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check slides auto play",
+              "fullTitle": "Test home page - Student Check slides auto play",
+              "timedOut": null,
+              "duration": 6868,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.carousel-indicators li.active').should('be.visible').invoke('attr', 'data-slide-to').then($index => {\n  cy.wait(5000);\n  cy.get('.carousel-indicators li.active').invoke('attr', 'data-slide-to').then($curr => expect($curr).to.not.equal($index));\n});",
+              "err": {},
+              "uuid": "7b1d62c3-9987-478e-ac9c-da9e9e938c40",
+              "parentUUID": "283a0d2f-5821-439c-aad6-de7866f5d334",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check prev slide button",
+              "fullTitle": "Test home page - Student Check prev slide button",
+              "timedOut": null,
+              "duration": 2052,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.carousel-indicators li.active').should('be.visible').invoke('attr', 'data-slide-to').then($index => {\n  cy.get('a[href=\"#carouselExampleIndicators\"][class=\"carousel-control-prev\"]').should('be.visible').click();\n  cy.get('.carousel-indicators li.active').invoke('attr', 'data-slide-to').then($curr => expect($curr).to.not.equal($index));\n});",
+              "err": {},
+              "uuid": "79c8c543-7023-4a01-9444-31fe73a92339",
+              "parentUUID": "283a0d2f-5821-439c-aad6-de7866f5d334",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check next slide button",
+              "fullTitle": "Test home page - Student Check next slide button",
+              "timedOut": null,
+              "duration": 11373,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"assets/home/home_student.spec.js/Test home page - Student -- Check next slide button (failed).png\"",
+              "code": "cy.wait(5000);\ncy.get('.carousel-indicators li.active').should('be.visible').invoke('attr', 'data-slide-to').then($index => {\n  cy.get('a[href=\"#carouselExampleIndicators\"][class=\"carousel-control-next\"]').should('be.visible').click();\n  cy.get('.carousel-indicators li.active').invoke('attr', 'data-slide-to').then($curr => expect($curr).to.not.equal($index));\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.carousel-indicators li.active`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.carousel-indicators li.active`, but never found it.\n    at Context.eval (http://localhost:8000/__cypress/tests?p=cypress/integration/home/home_student.spec.js:129:10)",
+                "diff": null
+              },
+              "uuid": "d2078a65-08ee-4dfd-9e16-86bdc8d35903",
+              "parentUUID": "283a0d2f-5821-439c-aad6-de7866f5d334",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "66fbeb5f-9cb7-4d29-8880-b8e957486984",
+            "469cd50a-86f3-4d0b-a2d2-1e84b81e9870",
+            "a7fb49b4-d054-4843-9be1-9b34dbc6a08c",
+            "7b1d62c3-9987-478e-ac9c-da9e9e938c40",
+            "79c8c543-7023-4a01-9444-31fe73a92339"
+          ],
+          "failures": [
+            "d2078a65-08ee-4dfd-9e16-86bdc8d35903"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 35914,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report/mocha",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "5.2.0"
+    }
+  }
+}
