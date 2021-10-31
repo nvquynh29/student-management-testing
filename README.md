@@ -19,7 +19,7 @@
 ## CheckList Test
  - [CheckList](https://docs.google.com/spreadsheets/d/1BeN0_J3W-w8RCsE3HJ5OI0SHJPdi58ArnLjkwcMFoNo/edit#gid=531992424)
 ## Báo cáo 
-- [Báo cáo](https://docs.google.com/document/d/1khFALO8Af2N6QKpODhMYUrhvLPBdbR9W/edit)
+- [Báo cáo](https://drive.google.com/file/d/13SubT_HHKq55QBUaibBaCUqzvoOuxV68/view?usp=sharing)
 
 ## Quản lý dự án 
 - [Trello](https://trello.com/b/TQFJouKD/testing)
